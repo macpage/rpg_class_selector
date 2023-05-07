@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(43, 42, 42);   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+#create_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+height: 30vh;
+width: 30vw;
+border: 0.5vh solid aqua;
+ animation: stretchOut 1.5s;
+}
+
+#username_input{
+    animation: fadeIn 3s;
+    height: 3vh;
+    width: 10vw;
+    background-color: rgb(64, 64, 64);
+    border: none;
+    outline: none;
+    color: rgb(242, 242, 242);
+    font-size: 20px;
+    text-align: center;
+    
+   
+    line-height: 3vh;
+    padding: 0;
+    margin:0;
+    position: absolute;
+}
+
+
+#username_btn{
+    animation: fadeIn 3s;
+    margin-top: 10vh;
+    height: 3vh;
+    width: 4vw;
+    font-size: 20px;
+    background-color: rgb(64, 64, 64);
+    border: none;
+    color: gray;
+}
+
+#username_btn:hover{
+    background-color: aqua;
+    color: rgb(64, 64, 64);
+    font-weight: bold;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes stretchOut {
+    from {
+     opacity: 0%;
+      width: 0px;
+    }
+  }
+  
