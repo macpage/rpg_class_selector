@@ -22,7 +22,6 @@ menu{
 height: 30vh;
 width: 30vw;
 border: 0.5vh solid aqua;
- animation: stretchOut 1.5s;
 }
 
 #username_input{
@@ -73,6 +72,13 @@ border: 0.5vh solid aqua;
     }
 }
 
+.stretchOut{
+    animation: stretchOut 1.5s;
+}
+.stretchMore{
+    animation: stretchMore 1.5s;
+}
+
 @keyframes stretchOut {
     from {
      opacity: 0%;
@@ -80,3 +86,10 @@ border: 0.5vh solid aqua;
     }
   }
   
+  @keyframes stretchMore {
+    from {
+    
+      width: 30vw;
+      height: 30vh;
+    }
+  }

@@ -31,6 +31,7 @@ function create_menu() {
 // Input für username erstellen
 function create_name_input() {
   create_box.setAttribute('id', 'create_box');
+  create_box.classList.add('stretchOut');
   username.setAttribute('id', 'username_input');
   username_btn.setAttribute('id', 'username_btn');
   username_btn.innerHTML = 'OK';
@@ -40,7 +41,21 @@ function create_name_input() {
   menu.append(create_box);
 }
 
+// Class selection
+function class_select() {
+  create_box.classList.add('stretchMore');
+  create_box.style.width = '50vw';
+  create_box.style.height = '40vh';
+}
+
 create_menu();
 create_name_input();
 // Controller
 console.log(user.rpg_class);
+function enter_class_select() {
+  username_btn.addEventListener('click', () => {
+    class_select();
+  });
+}
+
+enter_class_select();
