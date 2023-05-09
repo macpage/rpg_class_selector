@@ -25,7 +25,7 @@ border: 0.5vh solid aqua;
 }
 
 #username_input{
-    animation: fadeIn 3s;
+    animation: fadeIn 2s;
     height: 3vh;
     width: 10vw;
     background-color: rgb(64, 64, 64);
@@ -44,7 +44,7 @@ border: 0.5vh solid aqua;
 
 
 #username_btn{
-    animation: fadeIn 3s;
+    animation: fadeIn 2s;
     margin-top: 10vh;
     height: 3vh;
     width: 4vw;
@@ -73,10 +73,14 @@ border: 0.5vh solid aqua;
 }
 
 .stretchOut{
-    animation: stretchOut 1.5s;
+    animation: stretchOut 1s;
 }
 .stretchMore{
-    animation: stretchMore 1.5s;
+    animation: stretchMore 1s;
+}
+
+.fadeIn{
+    animation: fadeIn 2s;
 }
 
 @keyframes stretchOut {
@@ -93,3 +97,30 @@ border: 0.5vh solid aqua;
       height: 30vh;
     }
   }
+
+  .box_background{
+    display: grid;
+    grid-template-rows: 10vh;
+    column-gap: 2vw;
+  }
+
+  .greetings_text{
+    color: white;
+    animation: fadeIn 2s;
+  }
+
+  .under_text{
+    color: white;
+    animation: fadeIn 2s; 
+  }
+
+  .class_section{
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+    grid-row-start: 3;
+    justify-self: center;
+    animation: fadeIn 2s; 
+  }
+
+  

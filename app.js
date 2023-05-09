@@ -22,6 +22,13 @@ const create_box = document.createElement('div');
 const username = document.createElement('input');
 const username_btn = document.createElement('button');
 
+const box_background = document.createElement('div');
+const greetings_text = document.createElement('h1');
+const under_text = document.createElement('h2');
+const mage_section = document.createElement('div');
+const warrior_section = document.createElement('div');
+const priest_section = document.createElement('div');
+
 // Menu erstellen
 function create_menu() {
   menu.setAttribute('id', 'menu');
@@ -46,6 +53,27 @@ function class_select() {
   create_box.classList.add('stretchMore');
   create_box.style.width = '50vw';
   create_box.style.height = '40vh';
+  user.username = username.value;
+  username.remove();
+  username_btn.remove();
+
+  // Add new scene
+  box_background.classList.add('box_background');
+  create_box.append(box_background);
+  greetings_text.innerHTML = 'Hallo ' + user.username;
+  greetings_text.classList.add('greetings_text');
+  box_background.append(greetings_text);
+
+  under_text.innerHTML = 'Wähle dein Klasse: ';
+  under_text.classList.add('under_text');
+  box_background.append(under_text);
+
+  box_background.append(mage_section);
+  mage_section.classList.add('class_section');
+  box_background.append(warrior_section);
+  warrior_section.classList.add('class_section');
+  box_background.append(priest_section);
+  priest_section.classList.add('class_section');
 }
 
 create_menu();
