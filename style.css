@@ -117,10 +117,30 @@ border: 0.5vh solid aqua;
   .class_section{
     width: 10vw;
     height: 10vw;
-    background-color: white;
+    border: 0.5vh solid rgb(109, 109, 109);
     grid-row-start: 3;
     justify-self: center;
     animation: fadeIn 2s; 
+    transition:  1s;
+    transform-origin: top;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .rollOut{
+    
+  height: 20vw;
+  }
+
+  .rollOut:hover{
+    transition: 0.2s;
+    scale: 1.15;
+  }
+
+  img{
+    width: 10vw;
+    height: 10vw;
+    background-color: aquamarine;
   }
 
   

@@ -50,9 +50,10 @@ function create_name_input() {
 
 // Class selection
 function class_select() {
+  create_box.style.justifyContent = 'start';
   create_box.classList.add('stretchMore');
   create_box.style.width = '50vw';
-  create_box.style.height = '40vh';
+  create_box.style.height = '60vh';
   user.username = username.value;
   username.remove();
   username_btn.remove();
@@ -64,7 +65,7 @@ function class_select() {
   greetings_text.classList.add('greetings_text');
   box_background.append(greetings_text);
 
-  under_text.innerHTML = 'Wähle dein Klasse: ';
+  under_text.innerHTML = 'Wähle deine Klasse: ';
   under_text.classList.add('under_text');
   box_background.append(under_text);
 
@@ -74,6 +75,24 @@ function class_select() {
   warrior_section.classList.add('class_section');
   box_background.append(priest_section);
   priest_section.classList.add('class_section');
+
+  document.querySelectorAll('.class_section').forEach((e) => {
+    const class_pic = document.createElement('img');
+    const class_stats = document.createElement('table');
+    const tr_1 = document.createElement('tr');
+    const td_1 = document.createElement('td');
+
+    e.append(class_pic);
+    e.append(class_stats);
+    class_stats.append(tr_1);
+  });
+
+  setTimeout(() => {
+    document.querySelectorAll('.class_section').forEach((e) => {
+      e.classList.add('rollOut');
+      console.log('ooohh');
+    });
+  }, 1500);
 }
 
 create_menu();
