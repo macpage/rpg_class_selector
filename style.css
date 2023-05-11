@@ -125,6 +125,11 @@ border: 0.5vh solid aqua;
     transform-origin: top;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    color: white;
+  }
+
+  .class_stats{
+    animation: fadeIn 4s;
   }
 
   .rollOut{

@@ -6,14 +6,18 @@ function rpg_class(name, health, damage, defense) {
   this.defense = defense;
 }
 
-const mage_class = new rpg_class('Mage', 750, 1250, 1000);
+let rpg_classes = [];
+rpg_classes[0] = new rpg_class('Mage', 750, 1250, 1000);
+rpg_classes[1] = new rpg_class('Warrior', 1000, 1000, 1000);
+rpg_classes[2] = new rpg_class('Priest', 1250, 500, 1250);
 
 function create_user(username, rpg_class) {
   this.username = username;
   this.rpg_class = rpg_class;
 }
 
-const user = new create_user('Mac', mage_class);
+const user = new create_user('Mac', rpg_classes[0]);
+console.log(rpg_classes[0].name);
 // View
 const body = document.querySelector('body');
 const menu = document.createElement('div');
@@ -76,15 +80,51 @@ function class_select() {
   box_background.append(priest_section);
   priest_section.classList.add('class_section');
 
-  document.querySelectorAll('.class_section').forEach((e) => {
+  document.querySelectorAll('.class_section').forEach((e, index) => {
     const class_pic = document.createElement('img');
     const class_stats = document.createElement('table');
+    class_stats.classList.add('class_stats');
     const tr_1 = document.createElement('tr');
     const td_1 = document.createElement('td');
+    const td_2 = document.createElement('td');
 
+    const tr_2 = document.createElement('tr');
+    const td_3 = document.createElement('td');
+    const td_4 = document.createElement('td');
+
+    const tr_3 = document.createElement('tr');
+    const td_5 = document.createElement('td');
+    const td_6 = document.createElement('td');
+
+    const tr_4 = document.createElement('tr');
+    const td_7 = document.createElement('td');
+    const td_8 = document.createElement('td');
+
+    td_1.innerHTML = 'Class';
+    td_2.innerHTML = rpg_classes[index].name;
+
+    td_3.innerHTML = 'Health';
+    td_4.innerHTML = rpg_classes[index].health;
+
+    td_5.innerHTML = 'Strength';
+    td_6.innerHTML = rpg_classes[index].damage;
+
+    td_7.innerHTML = 'Defense';
+    td_8.innerHTML = rpg_classes[index].defense;
     e.append(class_pic);
     e.append(class_stats);
     class_stats.append(tr_1);
+    tr_1.append(td_1);
+    tr_1.append(td_2);
+    class_stats.append(tr_2);
+    tr_2.append(td_3);
+    tr_2.append(td_4);
+    class_stats.append(tr_3);
+    tr_3.append(td_5);
+    tr_3.append(td_6);
+    class_stats.append(tr_4);
+    tr_4.append(td_7);
+    tr_4.append(td_8);
   });
 
   setTimeout(() => {
