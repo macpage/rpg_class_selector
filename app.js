@@ -82,6 +82,13 @@ function class_select() {
 
   document.querySelectorAll('.class_section').forEach((e, index) => {
     const class_pic = document.createElement('img');
+    if (index == 0) {
+      class_pic.src = '/Users/mac/repos/rpg_class_selector/pics/mage.png';
+    } else if (index == 1) {
+      class_pic.src = 'pics/warrior.png';
+    } else if (index == 2) {
+      class_pic.src = 'pics/priest.png';
+    }
     const class_stats = document.createElement('table');
     class_stats.classList.add('class_stats');
     const tr_1 = document.createElement('tr');
@@ -100,16 +107,16 @@ function class_select() {
     const td_7 = document.createElement('td');
     const td_8 = document.createElement('td');
 
-    td_1.innerHTML = 'Class';
+    td_1.innerHTML = 'Class:';
     td_2.innerHTML = rpg_classes[index].name;
 
-    td_3.innerHTML = 'Health';
+    td_3.innerHTML = 'Health:';
     td_4.innerHTML = rpg_classes[index].health;
 
-    td_5.innerHTML = 'Strength';
+    td_5.innerHTML = 'Strength:';
     td_6.innerHTML = rpg_classes[index].damage;
 
-    td_7.innerHTML = 'Defense';
+    td_7.innerHTML = 'Defense:';
     td_8.innerHTML = rpg_classes[index].defense;
     e.append(class_pic);
     e.append(class_stats);
@@ -125,6 +132,15 @@ function class_select() {
     class_stats.append(tr_4);
     tr_4.append(td_7);
     tr_4.append(td_8);
+
+    td_1.style.fontWeight = 'bold';
+    td_1.style.fontSize = '18px';
+    td_3.style.fontWeight = 'bold';
+    td_3.style.fontSize = '18px';
+    td_5.style.fontWeight = 'bold';
+    td_5.style.fontSize = '18px';
+    td_7.style.fontWeight = 'bold';
+    td_7.style.fontSize = '18px';
   });
 
   setTimeout(() => {

@@ -130,6 +130,7 @@ border: 0.5vh solid aqua;
 
   .class_stats{
     animation: fadeIn 4s;
+    padding: 10%;
   }
 
   .rollOut{
@@ -137,15 +138,30 @@ border: 0.5vh solid aqua;
   height: 20vw;
   }
 
-  .rollOut:hover{
+  .rollOut:nth-of-type(1):hover{
     transition: 0.2s;
     scale: 1.15;
+    border-color: rgb(255, 0, 153);
+  }
+  .rollOut:nth-of-type(2):hover{
+    transition: 0.2s;
+    scale: 1.15;
+    border-color: rgb(255, 247, 0);
+  }
+  .rollOut:nth-of-type(3):hover{
+    transition: 0.2s;
+    scale: 1.15;
+    border-color: rgb(0, 255, 106);
   }
 
   img{
     width: 10vw;
     height: 10vw;
-    background-color: aquamarine;
+    align-self: center;
+    justify-self: center;
+    outline: none;
+    border: 0px;
   }
+
 
   
