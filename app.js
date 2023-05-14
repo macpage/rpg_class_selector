@@ -20,8 +20,18 @@ function create_user(username, rpg_class) {
 // Hair
 const hair_img = document.createElement('img');
 const hair_styles = [];
-hair_styles[0] = 'pics/pixil-layer-No hair.png';
-hair_styles[1] = 'pics/hair_style_1.png';
+hair_styles[0] = 'pics/hair_styles/hair_style_0.png';
+hair_styles[1] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
+
+const hair_style_1_colors = [];
+hair_style_1_colors[0] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
+hair_style_1_colors[1] = 'pics/hair_styles/hair_style_1/hair_style_1_brown.png';
+
+// Eye
+const eye_img = document.createElement('img');
+const eye_styles = [];
+eye_styles[0] = 'pics/eye_style_0.png';
+eye_styles[1] = 'pics/eye_style_1.png';
 const user = new create_user('Mac', rpg_classes[0]);
 console.log(rpg_classes[0].name);
 // View
@@ -210,35 +220,86 @@ function set_up_creator() {
       hair_num--;
       hair_selector_num.innerHTML = hair_num;
       hair_img.src = hair_styles[hair_num];
+      if (hair_num == 0 && document.getElementById('color_selector')) {
+        document.getElementById('color_selector').remove();
+      }
     });
     hair_selector_forward_btn.addEventListener('click', () => {
       hair_num++;
       hair_selector_num.innerHTML = hair_num;
       hair_img.src = hair_styles[hair_num];
+      if (hair_num == 0 && document.getElementById('color_selector')) {
+        document.getElementById('color_selector').remove();
+      }
     });
   }
 
   // Hair color
+  const all_colors = [];
+
   function select_color() {
     const color_selector = document.createElement('div');
     color_selector.setAttribute('id', 'color_selector');
     char_creator.append(color_selector);
 
-    const all_colors = [];
-
     for (let i = 0; i < 6; i++) {
       console.log(all_colors.length);
-      const e = document.createElement('div');
+      const e = document.createElement('input');
+      const labels = document.createElement('label');
+      labels.innerHTML = 'lol';
+      e.setAttribute('type', 'radio');
+      e.setAttribute('name', 'color');
       e.style.height = '2vw';
       e.style.width = '2vw';
-
+      all_colors[i] = e;
       color_selector.append(e);
+      color_selector.append(labels);
+    }
+
+    all_colors[0].style.backgroundColor = 'black';
+    all_colors[1].style.backgroundColor = '#8a6d51';
+    all_colors[2].style.backgroundColor = 'red';
+    all_colors[3].style.backgroundColor = '#f2da77';
+    all_colors[4].style.backgroundColor = 'grey';
+    all_colors[5].style.backgroundColor = '#ebebeb';
+    all_colors[0].setAttribute('id', 'black');
+    all_colors[1].setAttribute('id', 'brown');
+    all_colors[2].setAttribute('id', 'red');
+    all_colors[3].setAttribute('id', 'blond');
+    all_colors[4].setAttribute('id', 'grey');
+    all_colors[5].setAttribute('id', 'white');
+
+    all_colors.forEach((e) => {
+      e.addEventListener('click', () => {
+        change_color(e);
+      });
+    });
+    function change_color(e) {
+      console.log(e.id);
+      if (e.id == 'black') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[0];
+        }
+      }
+      if (e.id == 'brown') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[1];
+        }
+      }
     }
   }
 
   hair_selector.addEventListener('click', () => {
-    select_color();
+    if (!document.getElementById('color_selector')) {
+      if (hair_num != 0) {
+        select_color();
+        all_colors[0].checked = true;
+      }
+    }
   });
+
   // Eyes
   const eye_selector = document.createElement('div');
   const eye_selector_name = document.createElement('p');
@@ -260,16 +321,16 @@ function set_up_creator() {
 
   function eye_change_style() {
     char_preview.append(eye_img);
-    eye_img.src = hair_styles[hair_num];
-    hair_selector_back_btn.addEventListener('click', () => {
-      hair_num--;
-      hair_selector_num.innerHTML = hair_num;
-      hair_img.src = hair_styles[hair_num];
+    eye_img.src = eye_styles[eye_num];
+    eye_selector_back_btn.addEventListener('click', () => {
+      eye_num--;
+      eye_selector_num.innerHTML = eye_num;
+      eye_img.src = eye_styles[eye_num];
     });
-    hair_selector_forward_btn.addEventListener('click', () => {
-      hair_num++;
-      hair_selector_num.innerHTML = hair_num;
-      hair_img.src = hair_styles[hair_num];
+    eye_selector_forward_btn.addEventListener('click', () => {
+      eye_num++;
+      eye_selector_num.innerHTML = eye_num;
+      eye_img.src = eye_styles[eye_num];
     });
   }
 
@@ -282,6 +343,7 @@ function set_up_creator() {
   // Char Preview
 
   hair_change_style();
+  eye_change_style();
 }
 
 create_menu();
