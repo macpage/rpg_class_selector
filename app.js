@@ -22,10 +22,50 @@ const hair_img = document.createElement('img');
 const hair_styles = [];
 hair_styles[0] = 'pics/hair_styles/hair_style_0.png';
 hair_styles[1] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
+hair_styles[2] = 'pics/hair_styles/hair_style_2/hair_style_2_black.png';
+hair_styles[3] = 'pics/hair_styles/hair_style_3/hair_style_3_black.png';
+hair_styles[4] = 'pics/hair_styles/hair_style_4/hair_style_4_black.png';
+hair_styles[5] = 'pics/hair_styles/hair_style_5/hair_style_5_black.png';
 
 const hair_style_1_colors = [];
 hair_style_1_colors[0] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
 hair_style_1_colors[1] = 'pics/hair_styles/hair_style_1/hair_style_1_brown.png';
+hair_style_1_colors[2] = 'pics/hair_styles/hair_style_1/hair_style_1_red.png';
+hair_style_1_colors[3] = 'pics/hair_styles/hair_style_1/hair_style_1_blond.png';
+hair_style_1_colors[4] = 'pics/hair_styles/hair_style_1/hair_style_1_grey.png';
+hair_style_1_colors[5] = 'pics/hair_styles/hair_style_1/hair_style_1_white.png';
+
+const hair_style_2_colors = [];
+hair_style_2_colors[0] = 'pics/hair_styles/hair_style_2/hair_style_2_black.png';
+hair_style_2_colors[1] = 'pics/hair_styles/hair_style_2/hair_style_2_brown.png';
+hair_style_2_colors[2] = 'pics/hair_styles/hair_style_2/hair_style_2_red.png';
+hair_style_2_colors[3] = 'pics/hair_styles/hair_style_2/hair_style_2_blond.png';
+hair_style_2_colors[4] = 'pics/hair_styles/hair_style_2/hair_style_2_grey.png';
+hair_style_2_colors[5] = 'pics/hair_styles/hair_style_2/hair_style_2_white.png';
+
+const hair_style_3_colors = [];
+hair_style_3_colors[0] = 'pics/hair_styles/hair_style_3/hair_style_3_black.png';
+hair_style_3_colors[1] = 'pics/hair_styles/hair_style_3/hair_style_3_brown.png';
+hair_style_3_colors[2] = 'pics/hair_styles/hair_style_3/hair_style_3_red.png';
+hair_style_3_colors[3] = 'pics/hair_styles/hair_style_3/hair_style_3_blond.png';
+hair_style_3_colors[4] = 'pics/hair_styles/hair_style_3/hair_style_3_grey.png';
+hair_style_3_colors[5] = 'pics/hair_styles/hair_style_3/hair_style_3_white.png';
+
+const hair_style_4_colors = [];
+hair_style_4_colors[0] = 'pics/hair_styles/hair_style_4/hair_style_4_black.png';
+hair_style_4_colors[1] = 'pics/hair_styles/hair_style_4/hair_style_4_brown.png';
+hair_style_4_colors[2] = 'pics/hair_styles/hair_style_4/hair_style_4_red.png';
+hair_style_4_colors[3] = 'pics/hair_styles/hair_style_4/hair_style_4_blond.png';
+hair_style_4_colors[4] = 'pics/hair_styles/hair_style_4/hair_style_4_grey.png';
+hair_style_4_colors[5] = 'pics/hair_styles/hair_style_4/hair_style_4_white.png';
+
+const hair_style_5_colors = [];
+hair_style_5_colors[0] = 'pics/hair_styles/hair_style_5/hair_style_5_black.png';
+hair_style_5_colors[1] = 'pics/hair_styles/hair_style_5/hair_style_5_brown.png';
+hair_style_5_colors[2] = 'pics/hair_styles/hair_style_5/hair_style_5_red.png';
+hair_style_5_colors[3] = 'pics/hair_styles/hair_style_5/hair_style_5_blond.png';
+hair_style_5_colors[4] = 'pics/hair_styles/hair_style_5/hair_style_5_grey.png';
+hair_style_5_colors[5] = 'pics/hair_styles/hair_style_5/hair_style_5_white.png';
 
 // Eye
 const eye_img = document.createElement('img');
@@ -280,12 +320,111 @@ function set_up_creator() {
         switch (hair_num) {
           case 1:
             hair_img.src = hair_style_1_colors[0];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[0];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[0];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[0];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[0];
         }
       }
       if (e.id == 'brown') {
         switch (hair_num) {
           case 1:
             hair_img.src = hair_style_1_colors[1];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[1];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[1];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[1];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[1];
+        }
+      }
+      if (e.id == 'red') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[2];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[2];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[2];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[2];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[2];
+        }
+      }
+
+      if (e.id == 'blond') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[3];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[3];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[3];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[3];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[3];
+        }
+      }
+
+      if (e.id == 'grey') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[4];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[4];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[4];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[4];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[4];
+        }
+      }
+
+      if (e.id == 'white') {
+        switch (hair_num) {
+          case 1:
+            hair_img.src = hair_style_1_colors[5];
+            break;
+          case 2:
+            hair_img.src = hair_style_2_colors[5];
+            break;
+          case 3:
+            hair_img.src = hair_style_3_colors[5];
+            break;
+          case 4:
+            hair_img.src = hair_style_4_colors[5];
+            break;
+          case 5:
+            hair_img.src = hair_style_5_colors[5];
         }
       }
     }
