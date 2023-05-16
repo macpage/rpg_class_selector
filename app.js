@@ -70,8 +70,18 @@ hair_style_5_colors[5] = 'pics/hair_styles/hair_style_5/hair_style_5_white.png';
 // Eye
 const eye_img = document.createElement('img');
 const eye_styles = [];
-eye_styles[0] = 'pics/eye_style_0.png';
-eye_styles[1] = 'pics/eye_style_1.png';
+eye_styles[0] = 'pics/eye_styles/eye_style_0/eye_style_0_black.png';
+eye_styles[1] = 'pics/eye_styles/eye_style_1.png';
+eye_styles[2] = 'pics/eye_styles/eye_style_2.png';
+
+const eye_style_0_colors = [];
+eye_style_0_colors[0] = 'pics/eye_styles/eye_style_0/eye_style_0_black.png';
+eye_style_0_colors[1] = 'pics/eye_styles/eye_style_0/eye_style_0_brown.png';
+eye_style_0_colors[2] = 'pics/eye_styles/eye_style_0/eye_style_0_grey.png';
+eye_style_0_colors[3] = 'pics/eye_styles/eye_style_0/eye_style_0_blue.png';
+eye_style_0_colors[4] = 'pics/eye_styles/eye_style_0/eye_style_0_green.png';
+eye_style_0_colors[5] = 'pics/eye_styles/eye_style_0/eye_style_0_mix.png';
+
 const user = new create_user('Mac', rpg_classes[0]);
 console.log(rpg_classes[0].name);
 // View
@@ -243,6 +253,7 @@ function set_up_creator() {
 
   hair_selector.setAttribute('id', 'hair_selector');
   hair_selector.setAttribute('class', 'selector');
+  hair_selector.classList.add('hair');
 
   hair_selector_name.innerHTML = 'Hair';
   let hair_num = 0;
@@ -280,6 +291,7 @@ function set_up_creator() {
   function select_color() {
     const color_selector = document.createElement('div');
     color_selector.setAttribute('id', 'color_selector');
+    color_selector.classList.add('hair');
     char_creator.append(color_selector);
 
     for (let i = 0; i < 6; i++) {
@@ -448,6 +460,7 @@ function set_up_creator() {
 
   eye_selector.setAttribute('id', 'eye_selector');
   eye_selector.setAttribute('class', 'selector');
+  eye_selector.classList.add('eye');
 
   eye_selector_name.innerHTML = 'Eyes';
   let eye_num = 0;
@@ -483,6 +496,29 @@ function set_up_creator() {
 
   hair_change_style();
   eye_change_style();
+
+  function close_color_selector() {
+    const selectors = document.querySelectorAll('.selector');
+    selectors.forEach((e) => {
+      e.addEventListener('click', () => {
+        console.log(e.getAttribute('class'));
+        if (document.getElementById('color_selector')) {
+          console.log('sadklfjlkjösa');
+          if (
+            document.getElementById('color_selector').getAttribute('class') ==
+            e.getAttribute('class').split(' ')[1]
+          ) {
+            console.log('found');
+          } else {
+            document;
+            document.getElementById('color_selector').remove();
+          }
+        }
+      });
+    });
+  }
+
+  close_color_selector();
 }
 
 create_menu();
