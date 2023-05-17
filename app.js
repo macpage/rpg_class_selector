@@ -288,7 +288,7 @@ function set_up_creator() {
   // Hair color
   const all_colors = [];
 
-  function select_color() {
+  function select_color(selector) {
     const color_selector = document.createElement('div');
     color_selector.setAttribute('id', 'color_selector');
     color_selector.classList.add('hair');
@@ -326,8 +326,24 @@ function set_up_creator() {
         change_color(e);
       });
     });
+
+    let num;
+    console.log('selector: ' + selector);
+    switch (selector) {
+      case 'hair':
+        num = hair_num;
+        console.log('hair num');
+        break;
+
+      case 'eye':
+        num = eye_num;
+        console.log('eye num');
+        break;
+    }
+
     function change_color(e) {
       console.log(e.id);
+
       if (e.id == 'black') {
         switch (hair_num) {
           case 1:
@@ -442,15 +458,6 @@ function set_up_creator() {
     }
   }
 
-  hair_selector.addEventListener('click', () => {
-    if (!document.getElementById('color_selector')) {
-      if (hair_num != 0) {
-        select_color();
-        all_colors[0].checked = true;
-      }
-    }
-  });
-
   // Eyes
   const eye_selector = document.createElement('div');
   const eye_selector_name = document.createElement('p');
@@ -510,9 +517,16 @@ function set_up_creator() {
           ) {
             console.log('found');
           } else {
-            document;
             document.getElementById('color_selector').remove();
+            select_color(e.getAttribute('class').split(' ')[1]);
+            document
+              .getElementById('color_selector')
+              .setAttribute('class', e.getAttribute('class').split(' ')[1]);
           }
+        } else {
+          select_color(e.getAttribute('class').split(' ')[1]);
+          all_colors[0].checked = true;
+          console.log('open');
         }
       });
     });
