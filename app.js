@@ -19,53 +19,6 @@ function create_user(username, rpg_class) {
 // imgs
 // Hair
 const hair_img = document.createElement('img');
-const hair_styles = [];
-hair_styles[0] = 'pics/hair_styles/hair_style_0.png';
-hair_styles[1] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
-hair_styles[2] = 'pics/hair_styles/hair_style_2/hair_style_2_black.png';
-hair_styles[3] = 'pics/hair_styles/hair_style_3/hair_style_3_black.png';
-hair_styles[4] = 'pics/hair_styles/hair_style_4/hair_style_4_black.png';
-hair_styles[5] = 'pics/hair_styles/hair_style_5/hair_style_5_black.png';
-
-const hair_style_1_colors = [];
-hair_style_1_colors[0] = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
-hair_style_1_colors[1] = 'pics/hair_styles/hair_style_1/hair_style_1_brown.png';
-hair_style_1_colors[2] = 'pics/hair_styles/hair_style_1/hair_style_1_red.png';
-hair_style_1_colors[3] = 'pics/hair_styles/hair_style_1/hair_style_1_blond.png';
-hair_style_1_colors[4] = 'pics/hair_styles/hair_style_1/hair_style_1_grey.png';
-hair_style_1_colors[5] = 'pics/hair_styles/hair_style_1/hair_style_1_white.png';
-
-const hair_style_2_colors = [];
-hair_style_2_colors[0] = 'pics/hair_styles/hair_style_2/hair_style_2_black.png';
-hair_style_2_colors[1] = 'pics/hair_styles/hair_style_2/hair_style_2_brown.png';
-hair_style_2_colors[2] = 'pics/hair_styles/hair_style_2/hair_style_2_red.png';
-hair_style_2_colors[3] = 'pics/hair_styles/hair_style_2/hair_style_2_blond.png';
-hair_style_2_colors[4] = 'pics/hair_styles/hair_style_2/hair_style_2_grey.png';
-hair_style_2_colors[5] = 'pics/hair_styles/hair_style_2/hair_style_2_white.png';
-
-const hair_style_3_colors = [];
-hair_style_3_colors[0] = 'pics/hair_styles/hair_style_3/hair_style_3_black.png';
-hair_style_3_colors[1] = 'pics/hair_styles/hair_style_3/hair_style_3_brown.png';
-hair_style_3_colors[2] = 'pics/hair_styles/hair_style_3/hair_style_3_red.png';
-hair_style_3_colors[3] = 'pics/hair_styles/hair_style_3/hair_style_3_blond.png';
-hair_style_3_colors[4] = 'pics/hair_styles/hair_style_3/hair_style_3_grey.png';
-hair_style_3_colors[5] = 'pics/hair_styles/hair_style_3/hair_style_3_white.png';
-
-const hair_style_4_colors = [];
-hair_style_4_colors[0] = 'pics/hair_styles/hair_style_4/hair_style_4_black.png';
-hair_style_4_colors[1] = 'pics/hair_styles/hair_style_4/hair_style_4_brown.png';
-hair_style_4_colors[2] = 'pics/hair_styles/hair_style_4/hair_style_4_red.png';
-hair_style_4_colors[3] = 'pics/hair_styles/hair_style_4/hair_style_4_blond.png';
-hair_style_4_colors[4] = 'pics/hair_styles/hair_style_4/hair_style_4_grey.png';
-hair_style_4_colors[5] = 'pics/hair_styles/hair_style_4/hair_style_4_white.png';
-
-const hair_style_5_colors = [];
-hair_style_5_colors[0] = 'pics/hair_styles/hair_style_5/hair_style_5_black.png';
-hair_style_5_colors[1] = 'pics/hair_styles/hair_style_5/hair_style_5_brown.png';
-hair_style_5_colors[2] = 'pics/hair_styles/hair_style_5/hair_style_5_red.png';
-hair_style_5_colors[3] = 'pics/hair_styles/hair_style_5/hair_style_5_blond.png';
-hair_style_5_colors[4] = 'pics/hair_styles/hair_style_5/hair_style_5_grey.png';
-hair_style_5_colors[5] = 'pics/hair_styles/hair_style_5/hair_style_5_white.png';
 
 const hair_style = [
   [
@@ -108,22 +61,71 @@ const hair_style = [
     'pics/hair_styles/hair_style_5/hair_style_5_grey.png',
     'pics/hair_styles/hair_style_5/hair_style_5_white.png',
   ],
+  ['pics/hair_styles/hair_style_0.png'],
 ];
 
 // Eye
 const eye_img = document.createElement('img');
-const eye_styles = [];
-eye_styles[0] = 'pics/eye_styles/eye_style_0/eye_style_0_black.png';
-eye_styles[1] = 'pics/eye_styles/eye_style_1.png';
-eye_styles[2] = 'pics/eye_styles/eye_style_2.png';
+const eye_style = [
+  [
+    'pics/eye_styles/eye_style_0/eye_style_0_black.png',
+    'pics/eye_styles/eye_style_0/eye_style_0_brown.png',
+    'pics/eye_styles/eye_style_0/eye_style_0_grey.png',
+    'pics/eye_styles/eye_style_0/eye_style_0_blue.png',
+    'pics/eye_styles/eye_style_0/eye_style_0_green.png',
+    'pics/eye_styles/eye_style_0/eye_style_0_mix.png',
+  ],
+  [
+    'pics/eye_styles/eye_style_1/eye_style_1_black.png',
+    'pics/eye_styles/eye_style_1/eye_style_1_brown.png',
+    'pics/eye_styles/eye_style_1/eye_style_1_grey.png',
+    'pics/eye_styles/eye_style_1/eye_style_1_blue.png',
+    'pics/eye_styles/eye_style_1/eye_style_1_green.png',
+    'pics/eye_styles/eye_style_1/eye_style_1_mix.png',
+  ],
+];
 
-const eye_style_0_colors = [];
-eye_style_0_colors[0] = 'pics/eye_styles/eye_style_0/eye_style_0_black.png';
-eye_style_0_colors[1] = 'pics/eye_styles/eye_style_0/eye_style_0_brown.png';
-eye_style_0_colors[2] = 'pics/eye_styles/eye_style_0/eye_style_0_grey.png';
-eye_style_0_colors[3] = 'pics/eye_styles/eye_style_0/eye_style_0_blue.png';
-eye_style_0_colors[4] = 'pics/eye_styles/eye_style_0/eye_style_0_green.png';
-eye_style_0_colors[5] = 'pics/eye_styles/eye_style_0/eye_style_0_mix.png';
+// Mouth
+const mouth_img = document.createElement('img');
+const mouth_style = [
+  ['pics/mouth_styles/mouth_style_0.png'],
+  ['pics/mouth_styles/mouth_style_1.png'],
+  ['pics/mouth_styles/mouth_style_2.png'],
+  ['pics/mouth_styles/mouth_style_3.png'],
+];
+
+// Skin
+const skin_img = document.createElement('img');
+const skin_style = [
+  ['pics/skin_styles/skin_style_0.png'],
+  ['pics/skin_styles/skin_style_1.png'],
+  ['pics/skin_styles/skin_style_2.png'],
+  ['pics/skin_styles/skin_style_3.png'],
+  ['pics/skin_styles/skin_style_4.png'],
+  ['pics/skin_styles/skin_style_5.png'],
+];
+
+// Outfit
+
+const outfit_img = document.createElement('img');
+let outfit_style = [];
+const mage_style = [
+  'pics/mage_styles/mage_style_0.png',
+  'pics/mage_styles/mage_style_1.png',
+  'pics/mage_styles/mage_style_2.png',
+];
+
+const warrior_style = [
+  'pics/warrior_styles/warrior_style_0.png',
+  'pics/warrior_styles/warrior_style_1.png',
+  'pics/warrior_styles/warrior_style_2.png',
+];
+
+const priest_style = [
+  'pics/priest_styles/priest_style_0.png',
+  'pics/priest_styles/priest_style_1.png',
+  'pics/priest_styles/priest_style_2.png',
+];
 
 const user = new create_user('Mac', rpg_classes[0]);
 console.log(rpg_classes[0].name);
@@ -189,10 +191,13 @@ function class_select() {
 
   box_background.append(mage_section);
   mage_section.classList.add('class_section');
+  mage_section.setAttribute('id', 'mage');
   box_background.append(warrior_section);
   warrior_section.classList.add('class_section');
+  warrior_section.setAttribute('id', 'warrior');
   box_background.append(priest_section);
   priest_section.classList.add('class_section');
+  priest_section.setAttribute('id', 'priest');
 
   document.querySelectorAll('.class_section').forEach((e, index) => {
     const class_pic = document.createElement('img');
@@ -257,6 +262,18 @@ function class_select() {
     td_7.style.fontSize = '18px';
 
     e.addEventListener('click', () => {
+      switch (e.id) {
+        case 'mage':
+          outfit_style = mage_style;
+          console.log('style selected');
+          break;
+        case 'warrior':
+          outfit_style = warrior_style;
+          break;
+        case 'priest':
+          outfit_style = priest_style;
+          break;
+      }
       set_up_creator();
     });
   });
@@ -287,7 +304,14 @@ function set_up_creator() {
   create_box.style.height = '75vh';
 
   // Selectors
+
+  let color_id = 0;
   // Hair
+
+  let num;
+  let active_selector;
+  let active_img;
+
   const hair_selector = document.createElement('div');
   const hair_selector_name = document.createElement('p');
   const hair_selector_back_btn = document.createElement('button');
@@ -300,6 +324,7 @@ function set_up_creator() {
 
   hair_selector_name.innerHTML = 'Hair';
   let hair_num = 0;
+  let hair_color_id = 0;
   hair_selector_num.innerHTML = hair_num;
   selectors.append(hair_selector);
   hair_selector.append(hair_selector_name);
@@ -309,93 +334,27 @@ function set_up_creator() {
 
   function hair_change_style() {
     char_preview.append(hair_img);
-    hair_img.src = hair_styles[hair_num];
+    hair_img.src = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
     hair_selector_back_btn.addEventListener('click', () => {
       hair_num--;
       hair_selector_num.innerHTML = hair_num;
-      hair_img.src = hair_styles[hair_num];
-      if (hair_num == 0 && document.getElementById('color_selector')) {
+      hair_img.src = active_selector[hair_num][hair_color_id];
+      if (hair_num == 5 && document.getElementById('color_selector')) {
         document.getElementById('color_selector').remove();
+        console.log('weg');
       }
     });
     hair_selector_forward_btn.addEventListener('click', () => {
+      active_selector = hair_style;
       hair_num++;
       hair_selector_num.innerHTML = hair_num;
-      hair_img.src = hair_styles[hair_num];
-      if (hair_num == 0 && document.getElementById('color_selector')) {
+      hair_img.src = active_selector[hair_num][hair_color_id];
+      if (hair_num == 5 && document.getElementById('color_selector')) {
         document.getElementById('color_selector').remove();
+
+        console.log('weg');
       }
     });
-  }
-
-  // Hair color
-  const all_colors = [];
-
-  function select_color(selector) {
-    const color_selector = document.createElement('div');
-    color_selector.setAttribute('id', 'color_selector');
-    color_selector.classList.add('hair');
-    char_creator.append(color_selector);
-
-    for (let i = 0; i < 6; i++) {
-      console.log(all_colors.length);
-      const e = document.createElement('input');
-      const labels = document.createElement('label');
-      labels.innerHTML = 'lol';
-      e.setAttribute('type', 'radio');
-      e.setAttribute('name', 'color');
-      e.style.height = '2vw';
-      e.style.width = '2vw';
-      all_colors[i] = e;
-      color_selector.append(e);
-      color_selector.append(labels);
-    }
-
-    all_colors[0].style.backgroundColor = 'black';
-    all_colors[1].style.backgroundColor = '#8a6d51';
-    all_colors[2].style.backgroundColor = 'red';
-    all_colors[3].style.backgroundColor = '#f2da77';
-    all_colors[4].style.backgroundColor = 'grey';
-    all_colors[5].style.backgroundColor = '#ebebeb';
-    all_colors[0].setAttribute('id', 'black 0');
-    all_colors[1].setAttribute('id', 'brown 1');
-    all_colors[2].setAttribute('id', 'red 2');
-    all_colors[3].setAttribute('id', 'blond 3');
-    all_colors[4].setAttribute('id', 'grey 4');
-    all_colors[5].setAttribute('id', 'white 5');
-
-    all_colors.forEach((e) => {
-      e.addEventListener('click', () => {
-        change_color(e);
-      });
-    });
-
-    let num;
-    let active_selector;
-    let active_img;
-    console.log('selector: ' + selector);
-    switch (selector) {
-      case 'hair':
-        num = hair_num;
-        console.log('hair num');
-        active_selector = hair_style;
-        active_img = hair_img;
-        break;
-
-      case 'eye':
-        num = eye_num;
-        console.log('eye num');
-        // active_selector = eye_styles
-        active_img = eye_img;
-        break;
-    }
-
-    function change_color(e) {
-      console.log(e.id);
-      console.log(active_selector[num][e.id.split(' ')[1]]);
-      console.log(hair_style[0][0]);
-      active_img.src = active_selector[0][e.id.split(' ')[1]];
-    }
   }
 
   // Eyes
@@ -411,6 +370,7 @@ function set_up_creator() {
 
   eye_selector_name.innerHTML = 'Eyes';
   let eye_num = 0;
+  let eye_color_id = 0;
   eye_selector_num.innerHTML = eye_num;
   selectors.append(eye_selector);
   eye_selector.append(eye_selector_name);
@@ -420,57 +380,280 @@ function set_up_creator() {
 
   function eye_change_style() {
     char_preview.append(eye_img);
-    eye_img.src = eye_styles[eye_num];
+    eye_img.src = eye_style[eye_num][eye_color_id];
     eye_selector_back_btn.addEventListener('click', () => {
       eye_num--;
       eye_selector_num.innerHTML = eye_num;
-      eye_img.src = eye_styles[eye_num];
+      eye_img.src = eye_style[eye_num][eye_color_id];
     });
     eye_selector_forward_btn.addEventListener('click', () => {
       eye_num++;
       eye_selector_num.innerHTML = eye_num;
-      eye_img.src = eye_styles[eye_num];
+      eye_img.src = eye_style[eye_num][eye_color_id];
     });
   }
 
   // Mouth
+  const mouth_selector = document.createElement('div');
+  const mouth_selector_name = document.createElement('p');
+  const mouth_selector_back_btn = document.createElement('button');
+  const mouth_selector_num = document.createElement('p');
+  const mouth_selector_forward_btn = document.createElement('button');
 
+  mouth_selector.setAttribute('id', 'mouth_selector');
+  mouth_selector.setAttribute('class', 'selector');
+  mouth_selector.classList.add('mouth');
+
+  mouth_selector_name.innerHTML = 'Mouth';
+  let mouth_num = 0;
+  let mouth_color_id = 0;
+  mouth_selector_num.innerHTML = mouth_num;
+  selectors.append(mouth_selector);
+  mouth_selector.append(mouth_selector_name);
+  mouth_selector.append(mouth_selector_back_btn);
+  mouth_selector.append(mouth_selector_num);
+  mouth_selector.append(mouth_selector_forward_btn);
+
+  function mouth_change_style() {
+    char_preview.append(mouth_img);
+    mouth_img.src = mouth_style[mouth_num][0];
+    mouth_selector_back_btn.addEventListener('click', () => {
+      mouth_num--;
+      mouth_selector_num.innerHTML = mouth_num;
+      mouth_img.src = mouth_style[mouth_num][0];
+    });
+    mouth_selector_forward_btn.addEventListener('click', () => {
+      mouth_num++;
+      mouth_selector_num.innerHTML = mouth_num;
+      mouth_img.src = mouth_style[mouth_num][0];
+    });
+  }
   // Skin
+
+  const skin_selector = document.createElement('div');
+  const skin_selector_name = document.createElement('p');
+  const skin_selector_back_btn = document.createElement('button');
+  const skin_selector_num = document.createElement('p');
+  const skin_selector_forward_btn = document.createElement('button');
+
+  skin_selector.setAttribute('id', 'skin_selector');
+  skin_selector.setAttribute('class', 'selector');
+  skin_selector.classList.add('skin');
+
+  skin_selector_name.innerHTML = 'Skin';
+  let skin_num = 0;
+  let skin_color_id = 0;
+  skin_selector_num.innerHTML = skin_num;
+  selectors.append(skin_selector);
+  skin_selector.append(skin_selector_name);
+  skin_selector.append(skin_selector_back_btn);
+  skin_selector.append(skin_selector_num);
+  skin_selector.append(skin_selector_forward_btn);
+
+  function skin_change_style() {
+    char_preview.append(skin_img);
+    skin_img.src = skin_style[skin_num][0];
+    skin_selector_back_btn.addEventListener('click', () => {
+      skin_num--;
+      skin_selector_num.innerHTML = skin_num;
+      skin_img.src = skin_style[skin_num][0];
+    });
+    skin_selector_forward_btn.addEventListener('click', () => {
+      skin_num++;
+      skin_selector_num.innerHTML = skin_num;
+      skin_img.src = skin_style[skin_num][0];
+    });
+  }
 
   // Outfit
 
-  // Char Preview
+  const outfit_selector = document.createElement('div');
+  const outfit_selector_name = document.createElement('p');
+  const outfit_selector_back_btn = document.createElement('button');
+  const outfit_selector_num = document.createElement('p');
+  const outfit_selector_forward_btn = document.createElement('button');
 
-  hair_change_style();
-  eye_change_style();
+  outfit_selector.setAttribute('id', 'outfit_selector');
+  outfit_selector.setAttribute('class', 'selector');
+  outfit_selector.classList.add('outfit');
+
+  outfit_selector_name.innerHTML = 'Outfit';
+  let outfit_num = 0;
+  let outfit_color_id = 0;
+  outfit_selector_num.innerHTML = outfit_num;
+  selectors.append(outfit_selector);
+  outfit_selector.append(outfit_selector_name);
+  outfit_selector.append(outfit_selector_back_btn);
+  outfit_selector.append(outfit_selector_num);
+  outfit_selector.append(outfit_selector_forward_btn);
+
+  function outfit_change_style() {
+    char_preview.append(outfit_img);
+    outfit_img.src = outfit_style[outfit_num];
+    outfit_selector_back_btn.addEventListener('click', () => {
+      outfit_num--;
+      outfit_selector_num.innerHTML = outfit_num;
+      outfit_img.src = outfit_style[outfit_num];
+    });
+    outfit_selector_forward_btn.addEventListener('click', () => {
+      outfit_num++;
+      outfit_selector_num.innerHTML = outfit_num;
+      outfit_img.src = outfit_style[outfit_num];
+    });
+  }
+
+  // Color Selector
+
+  const all_colors = [];
+
+  function select_color(selector) {
+    const color_selector = document.createElement('div');
+    color_selector.setAttribute('id', 'color_selector');
+    color_selector.classList.add(selector);
+    char_creator.append(color_selector);
+
+    for (let i = 0; i < 6; i++) {
+      console.log(all_colors.length);
+      const e = document.createElement('input');
+      const labels = document.createElement('label');
+      labels.innerHTML = 'lol';
+      e.setAttribute('type', 'radio');
+      e.setAttribute('name', 'color');
+      e.style.height = '2vw';
+      e.style.width = '2vw';
+      all_colors[i] = e;
+
+      color_selector.append(labels);
+      labels.append(e);
+    }
+
+    all_colors[0].setAttribute('id', 'black 0');
+    all_colors[1].setAttribute('id', 'brown 1');
+    all_colors[2].setAttribute('id', 'red 2');
+    all_colors[3].setAttribute('id', 'blond 3');
+    all_colors[4].setAttribute('id', 'grey 4');
+    all_colors[5].setAttribute('id', 'white 5');
+
+    all_colors.forEach((e) => {
+      e.addEventListener('click', () => {
+        change_color(e);
+      });
+    });
+
+    function change_color(e) {
+      console.log(e.id);
+      console.log('selector: ' + selector);
+      switch (selector) {
+        case 'hair':
+          num = hair_num;
+          console.log('hair num' + num);
+          active_selector = hair_style;
+          active_img = hair_img;
+          hair_color_id = e.id.split(' ')[1];
+          if (num == 5) {
+            document.getElementById('color_selector').remove();
+          }
+          break;
+
+        case 'eye':
+          num = eye_num;
+          console.log('eye num');
+          active_selector = eye_style;
+          active_img = eye_img;
+          eye_color_id = e.id.split(' ')[1];
+          break;
+      }
+      console.log('bro ' + active_selector[num][e.id.split(' ')[1]]);
+      console.log('num:' + num);
+      active_img.src = active_selector[num][e.id.split(' ')[1]];
+      color_id = e.id.split(' ')[1];
+    }
+  }
+
+  // Char Preview
 
   function close_color_selector() {
     const selectors = document.querySelectorAll('.selector');
     selectors.forEach((e) => {
       e.addEventListener('click', () => {
-        console.log(e.getAttribute('class'));
+        e.style.border = 'thick solid #0000FF';
+        selectors.forEach((s) => {
+          if (
+            s.getAttribute('class').split(' ')[1] !=
+            e.getAttribute('class').split(' ')[1]
+          ) {
+            s.style.border = 'none';
+          }
+        });
+
+        console.log('loll ' + e.getAttribute('class'));
         if (document.getElementById('color_selector')) {
-          console.log('sadklfjlkjösa');
           if (
             document.getElementById('color_selector').getAttribute('class') ==
             e.getAttribute('class').split(' ')[1]
           ) {
+            switch (e.getAttribute('class').split(' ')[1]) {
+              case 'hair':
+                if (num == 5) {
+                  document.getElementById('color_selector').remove();
+                  console.log('brooooo');
+                }
+
+                break;
+            }
+            all_colors[color_id].checked = true;
             console.log('found');
           } else {
-            document.getElementById('color_selector').remove();
-            select_color(e.getAttribute('class').split(' ')[1]);
-            document
-              .getElementById('color_selector')
-              .setAttribute('class', e.getAttribute('class').split(' ')[1]);
+            switch (e.getAttribute('class').split(' ')[1]) {
+              case 'mouth':
+                document.getElementById('color_selector').remove();
+                break;
+              case 'skin':
+                document.getElementById('color_selector').remove();
+                break;
+              case 'outfit':
+                document.getElementById('color_selector').remove();
+                break;
+              default:
+                document.getElementById('color_selector').remove();
+                select_color(e.getAttribute('class').split(' ')[1]);
+                document
+                  .getElementById('color_selector')
+                  .setAttribute('class', e.getAttribute('class').split(' ')[1]);
+                break;
+            }
           }
         } else {
-          select_color(e.getAttribute('class').split(' ')[1]);
-          all_colors[0].checked = true;
-          console.log('open');
+          switch (e.getAttribute('class').split(' ')[1]) {
+            case 'hair':
+              if (num == 5) {
+                document.getElementById('color_selector').remove();
+              } else {
+                select_color(e.getAttribute('class').split(' ')[1]);
+              }
+
+              break;
+            case 'mouth':
+              break;
+            case 'skin':
+              break;
+            case 'outfit':
+              break;
+            default:
+              select_color(e.getAttribute('class').split(' ')[1]);
+              all_colors[0].checked = true;
+              break;
+          }
         }
       });
     });
   }
+
+  skin_change_style();
+  outfit_change_style();
+  hair_change_style();
+  eye_change_style();
+  mouth_change_style();
 
   close_color_selector();
 }
