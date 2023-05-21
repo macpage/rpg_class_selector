@@ -551,7 +551,7 @@ function set_up_creator() {
       console.log(all_colors.length);
       const e = document.createElement('input');
       const labels = document.createElement('label');
-      labels.innerHTML = 'lol';
+      labels.innerHTML = i;
       e.setAttribute('type', 'radio');
       e.setAttribute('name', 'color');
       e.style.height = '2vw';
