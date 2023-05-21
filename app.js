@@ -83,6 +83,7 @@ const eye_style = [
     'pics/eye_styles/eye_style_1/eye_style_1_green.png',
     'pics/eye_styles/eye_style_1/eye_style_1_mix.png',
   ],
+  ['pics/eye_styles/eye_style_2.png'],
 ];
 
 // Mouth
@@ -129,6 +130,7 @@ const priest_style = [
 
 const user = new create_user('Mac', rpg_classes[0]);
 console.log(rpg_classes[0].name);
+
 // View
 const body = document.querySelector('body');
 const menu = document.createElement('div');
@@ -336,23 +338,30 @@ function set_up_creator() {
     char_preview.append(hair_img);
     hair_img.src = 'pics/hair_styles/hair_style_1/hair_style_1_black.png';
     hair_selector_back_btn.addEventListener('click', () => {
-      hair_num--;
-      hair_selector_num.innerHTML = hair_num;
-      hair_img.src = active_selector[hair_num][hair_color_id];
-      if (hair_num == 5 && document.getElementById('color_selector')) {
-        document.getElementById('color_selector').remove();
-        console.log('weg');
+      if (hair_num > 0) {
+        hair_num--;
+        hair_selector_num.innerHTML = hair_num;
+        hair_img.src = active_selector[hair_num][hair_color_id];
+        if (hair_num == 5 && document.getElementById('color_selector')) {
+          document.getElementById('color_selector').remove();
+          console.log('weg');
+          hair_img.src = active_selector[hair_num][0];
+        }
       }
     });
     hair_selector_forward_btn.addEventListener('click', () => {
-      active_selector = hair_style;
-      hair_num++;
-      hair_selector_num.innerHTML = hair_num;
-      hair_img.src = active_selector[hair_num][hair_color_id];
-      if (hair_num == 5 && document.getElementById('color_selector')) {
-        document.getElementById('color_selector').remove();
+      if (hair_num < 5) {
+        active_selector = hair_style;
+        hair_num++;
+        hair_selector_num.innerHTML = hair_num;
 
-        console.log('weg');
+        if (hair_num == 5 && document.getElementById('color_selector')) {
+          document.getElementById('color_selector').remove();
+          hair_img.src = active_selector[hair_num][0];
+          console.log('weg');
+        } else {
+          hair_img.src = active_selector[hair_num][hair_color_id];
+        }
       }
     });
   }
@@ -382,14 +391,28 @@ function set_up_creator() {
     char_preview.append(eye_img);
     eye_img.src = eye_style[eye_num][eye_color_id];
     eye_selector_back_btn.addEventListener('click', () => {
-      eye_num--;
-      eye_selector_num.innerHTML = eye_num;
-      eye_img.src = eye_style[eye_num][eye_color_id];
+      if (eye_num > 0) {
+        eye_num--;
+        eye_selector_num.innerHTML = eye_num;
+        eye_img.src = eye_style[eye_num][eye_color_id];
+        if (eye_num == 2 && document.getElementById('color_selector')) {
+          document.getElementById('color_selector').remove();
+          eye_img.src = eye_style[eye_num][0];
+        }
+      }
     });
     eye_selector_forward_btn.addEventListener('click', () => {
-      eye_num++;
-      eye_selector_num.innerHTML = eye_num;
-      eye_img.src = eye_style[eye_num][eye_color_id];
+      if (eye_num < 2) {
+        eye_num++;
+        eye_selector_num.innerHTML = eye_num;
+
+        if (eye_num == 2 && document.getElementById('color_selector')) {
+          document.getElementById('color_selector').remove();
+          eye_img.src = eye_style[eye_num][0];
+        } else {
+          eye_img.src = eye_style[eye_num][eye_color_id];
+        }
+      }
     });
   }
 
@@ -418,14 +441,18 @@ function set_up_creator() {
     char_preview.append(mouth_img);
     mouth_img.src = mouth_style[mouth_num][0];
     mouth_selector_back_btn.addEventListener('click', () => {
-      mouth_num--;
-      mouth_selector_num.innerHTML = mouth_num;
-      mouth_img.src = mouth_style[mouth_num][0];
+      if (mouth_num > 0) {
+        mouth_num--;
+        mouth_selector_num.innerHTML = mouth_num;
+        mouth_img.src = mouth_style[mouth_num][0];
+      }
     });
     mouth_selector_forward_btn.addEventListener('click', () => {
-      mouth_num++;
-      mouth_selector_num.innerHTML = mouth_num;
-      mouth_img.src = mouth_style[mouth_num][0];
+      if (mouth_num < 4) {
+        mouth_num++;
+        mouth_selector_num.innerHTML = mouth_num;
+        mouth_img.src = mouth_style[mouth_num][0];
+      }
     });
   }
   // Skin
@@ -454,14 +481,18 @@ function set_up_creator() {
     char_preview.append(skin_img);
     skin_img.src = skin_style[skin_num][0];
     skin_selector_back_btn.addEventListener('click', () => {
-      skin_num--;
-      skin_selector_num.innerHTML = skin_num;
-      skin_img.src = skin_style[skin_num][0];
+      if (skin_num > 0) {
+        skin_num--;
+        skin_selector_num.innerHTML = skin_num;
+        skin_img.src = skin_style[skin_num][0];
+      }
     });
     skin_selector_forward_btn.addEventListener('click', () => {
-      skin_num++;
-      skin_selector_num.innerHTML = skin_num;
-      skin_img.src = skin_style[skin_num][0];
+      if (skin_num < 5) {
+        skin_num++;
+        skin_selector_num.innerHTML = skin_num;
+        skin_img.src = skin_style[skin_num][0];
+      }
     });
   }
 
@@ -491,14 +522,18 @@ function set_up_creator() {
     char_preview.append(outfit_img);
     outfit_img.src = outfit_style[outfit_num];
     outfit_selector_back_btn.addEventListener('click', () => {
-      outfit_num--;
-      outfit_selector_num.innerHTML = outfit_num;
-      outfit_img.src = outfit_style[outfit_num];
+      if (outfit_num > 0) {
+        outfit_num--;
+        outfit_selector_num.innerHTML = outfit_num;
+        outfit_img.src = outfit_style[outfit_num];
+      }
     });
     outfit_selector_forward_btn.addEventListener('click', () => {
-      outfit_num++;
-      outfit_selector_num.innerHTML = outfit_num;
-      outfit_img.src = outfit_style[outfit_num];
+      if (outfit_num < 2) {
+        outfit_num++;
+        outfit_selector_num.innerHTML = outfit_num;
+        outfit_img.src = outfit_style[outfit_num];
+      }
     });
   }
 
@@ -576,13 +611,14 @@ function set_up_creator() {
     const selectors = document.querySelectorAll('.selector');
     selectors.forEach((e) => {
       e.addEventListener('click', () => {
-        e.style.border = 'thick solid #0000FF';
+        e.style.backgroundColor = ' rgb(132, 0, 255)';
+
         selectors.forEach((s) => {
           if (
             s.getAttribute('class').split(' ')[1] !=
             e.getAttribute('class').split(' ')[1]
           ) {
-            s.style.border = 'none';
+            s.style.backgroundColor = ' rgb(64, 64, 64)';
           }
         });
 
@@ -594,9 +630,16 @@ function set_up_creator() {
           ) {
             switch (e.getAttribute('class').split(' ')[1]) {
               case 'hair':
-                if (num == 5) {
+                if (hair_num == 5) {
                   document.getElementById('color_selector').remove();
                   console.log('brooooo');
+                }
+
+                break;
+              case 'eye':
+                if (eye_num == 2) {
+                  document.getElementById('color_selector').remove();
+                  console.log('bongo');
                 }
 
                 break;
@@ -604,7 +647,27 @@ function set_up_creator() {
             all_colors[color_id].checked = true;
             console.log('found');
           } else {
+            document.getElementById('color_selector').remove();
+            select_color(e.getAttribute('class').split(' ')[1]);
+            document
+              .getElementById('color_selector')
+              .setAttribute('class', e.getAttribute('class').split(' ')[1]);
+            console.log('new');
             switch (e.getAttribute('class').split(' ')[1]) {
+              case 'hair':
+                if (hair_num == 5) {
+                  document.getElementById('color_selector').remove();
+                  console.log('brooooo');
+                }
+
+                break;
+              case 'eye':
+                if (eye_num == 2) {
+                  document.getElementById('color_selector').remove();
+                  console.log('bongo');
+                }
+
+                break;
               case 'mouth':
                 document.getElementById('color_selector').remove();
                 break;
@@ -620,16 +683,34 @@ function set_up_creator() {
                 document
                   .getElementById('color_selector')
                   .setAttribute('class', e.getAttribute('class').split(' ')[1]);
+                console.log('new');
                 break;
             }
           }
         } else {
           switch (e.getAttribute('class').split(' ')[1]) {
             case 'hair':
-              if (num == 5) {
+              if (hair_num == 5) {
                 document.getElementById('color_selector').remove();
+                console.log('bongo');
               } else {
                 select_color(e.getAttribute('class').split(' ')[1]);
+                console.log('foundsdfsd');
+                console.log(num);
+              }
+
+              break;
+            case 'eye':
+              if (eye_num == 2) {
+                if (document.getElementById('color_selector')) {
+                  document.getElementById('color_selector').remove();
+                }
+
+                console.log('bongo');
+              } else {
+                select_color(e.getAttribute('class').split(' ')[1]);
+                console.log('foundsdfsd');
+                console.log(num);
               }
 
               break;
@@ -642,12 +723,35 @@ function set_up_creator() {
             default:
               select_color(e.getAttribute('class').split(' ')[1]);
               all_colors[0].checked = true;
+              console.log('newwww');
               break;
           }
         }
       });
     });
   }
+
+  setTimeout(() => {
+    document.querySelectorAll('.selector').forEach((e) => {
+      e.style.display = 'grid';
+      console.log('ooohh');
+    });
+  }, 1000);
+
+  // Add image to button
+  document.querySelectorAll('.selector button').forEach((e, index) => {
+    let right = document.createElement('img');
+    right.src = 'pics/icons/right.png';
+    let left = document.createElement('img');
+    left.src = 'pics/icons/left.png';
+    if (index % 2 == 0) {
+      console.log('yeaaahh');
+
+      e.append(left);
+    } else {
+      e.append(right);
+    }
+  });
 
   skin_change_style();
   outfit_change_style();
