@@ -11,10 +11,13 @@ rpg_classes[0] = new rpg_class('Mage', 750, 1250, 1000);
 rpg_classes[1] = new rpg_class('Warrior', 1000, 1000, 1000);
 rpg_classes[2] = new rpg_class('Priest', 1250, 500, 1250);
 
-function create_user(username, rpg_class) {
+function create_user(id, username, rpg_class) {
   this.username = username;
   this.rpg_class = rpg_class;
+  this.id = id++;
 }
+
+let id = 0;
 
 // imgs
 // Hair
@@ -128,8 +131,8 @@ const priest_style = [
   'pics/priest_styles/priest_style_2.png',
 ];
 
-const user = new create_user('Mac', rpg_classes[0]);
-console.log(rpg_classes[0].name);
+const user = new create_user(id, 'Mac', rpg_classes[0]);
+console.log(user);
 
 // View
 const body = document.querySelector('body');
@@ -295,12 +298,15 @@ const selectors = document.createElement('div');
 selectors.setAttribute('id', 'selectors');
 const char_preview = document.createElement('div');
 char_preview.setAttribute('id', 'char_preview');
+const char_preview_section = document.createElement('div');
+char_preview_section.setAttribute('id', 'char_preview_section');
+char_creator.append(char_preview_section);
 
 function set_up_creator() {
   box_background.remove();
   create_box.append(char_creator);
   char_creator.append(selectors);
-  char_creator.append(char_preview);
+  char_preview_section.append(char_preview);
   create_box.classList.add('stretchMore2');
   create_box.style.width = '60vw';
   create_box.style.height = '75vh';
@@ -752,6 +758,17 @@ function set_up_creator() {
       e.append(right);
     }
   });
+
+  // Add username under avatar
+  function addUsername() {
+    const username_div = document.createElement('div');
+    username_div.setAttribute('id', 'username');
+    char_preview_section.append(username_div);
+    username_div.innerHTML = '#000' + id + ' -' + username.value;
+  }
+  setTimeout(() => {
+    addUsername();
+  }, 1000);
 
   skin_change_style();
   outfit_change_style();
