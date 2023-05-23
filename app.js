@@ -796,6 +796,35 @@ function set_up_creator() {
 
 create_menu();
 create_name_input();
+
+// End Buttons
+
+function end_buttons() {
+  const end_buttons = document.createElement('div');
+  end_buttons.setAttribute('id', 'end_buttons');
+  char_creator.append(end_buttons);
+
+  // Back to name selection
+  const quit_button = document.createElement('button');
+  quit_button.setAttribute('id', 'quit_button');
+  end_buttons.append(quit_button);
+  quit_button.innerHTML = 'quit';
+
+  quit_button.addEventListener('click', () => {
+    location.reload();
+  });
+
+  // save creaion
+  const create_button = document.createElement('button');
+  create_button.setAttribute('id', 'create_button');
+  end_buttons.append(create_button);
+  create_button.innerHTML = 'create';
+
+  create_button.addEventListener('click', () => {
+    location.reload();
+  });
+}
+end_buttons();
 // Controller
 console.log(user.rpg_class);
 function enter_class_select() {

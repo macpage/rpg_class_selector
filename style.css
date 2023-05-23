@@ -154,7 +154,7 @@ justify-content: center;
   scale: 1.15;
   cursor: pointer;
   border-color: rgb(255, 157, 0);
-  color: rgb(255, 157, 0);;
+  color: rgb(255, 157, 0);
 }
 
   #title{
@@ -413,4 +413,64 @@ justify-content: center;
     cursor: pointer;
   }
 
+
+  #end_buttons{
+    grid-column: 3;
+    grid-row: 2;
+   display: flex;
+   gap: 5vw;
+   align-items: center;
+   justify-content: center;
+  }
+
+  #quit_button{
+    width: 4vw;
+    height: 4vh;
+    border: 0.3vh solid rgb(109, 109, 109);
+    background-color: transparent;
+
+
+   
+    box-sizing: border-box;
+
+    color:  rgb(109, 109, 109);
+    font-size: 16px;
+    font-weight: bold;
+    animation: fadeIn 2s; 
+    transition:  1s;
+
+  }
+
+  #quit_button:hover{
+    transition: 0.2s;
+    scale: 1.15;
+    cursor: pointer;
+    border-color: rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+  }
+
+  #create_button{
+    width: 4vw;
+    height: 4vh;
+    border: 0.3vh solid rgb(109, 109, 109);
+    background-color: transparent;
+
+
+   
+    box-sizing: border-box;
+
+    color:  rgb(109, 109, 109);
+    font-size: 16px;
+    font-weight: bold;
+    animation: fadeIn 2s; 
+    transition:  1s;
+
+  }
+  #create_button:hover{
+    transition: 0.2s;
+    scale: 1.15;
+    cursor: pointer;
+    border-color: rgb(55, 255, 0);
+    color: rgb(55, 255, 0);
+  }
   
