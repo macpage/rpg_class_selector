@@ -1,4 +1,5 @@
 // Model
+
 function rpg_class(name, health, damage, defense) {
   this.name = name;
   this.health = health;
@@ -290,6 +291,20 @@ function class_select() {
     });
   }, 1500);
 }
+
+// Back to name selection
+function back_to_name() {
+  const back_to_name_button = document.createElement('button');
+  back_to_name_button.setAttribute('id', 'back_to_name');
+  box_background.append(back_to_name_button);
+  back_to_name_button.innerHTML = 'back';
+
+  back_to_name_button.addEventListener('click', () => {
+    location.reload();
+  });
+}
+
+back_to_name();
 
 // Character Creator
 const char_creator = document.createElement('div');
@@ -790,3 +805,9 @@ function enter_class_select() {
 }
 
 enter_class_select();
+
+// Back to class selection
+function back_to_class() {}
+
+// Save character
+function save_character() {}
