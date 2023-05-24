@@ -12,13 +12,20 @@ rpg_classes[0] = new rpg_class('Mage', 750, 1250, 1000);
 rpg_classes[1] = new rpg_class('Warrior', 1000, 1000, 1000);
 rpg_classes[2] = new rpg_class('Priest', 1250, 500, 1250);
 
-function create_user(id, username, rpg_class) {
+function create_user(id, username, rpg_class, hair, eyes, mouth, skin, outfit) {
   this.username = username;
   this.rpg_class = rpg_class;
   this.id = id++;
+  this.hair = hair;
+  this.eyes = eyes;
+  this.mouth = mouth;
+  this.skin = skin;
+  this.outfit = outfit;
 }
 
 let id = 0;
+
+let selected_class = 0;
 
 // imgs
 // Hair
@@ -132,8 +139,10 @@ const priest_style = [
   'pics/priest_styles/priest_style_2.png',
 ];
 
-const user = new create_user(id, 'Mac', rpg_classes[0]);
-console.log(user);
+//const user = new create_user(id, 'Mac', rpg_classes[0]);
+
+// User lists
+let user_list = [[]];
 
 // View
 const body = document.querySelector('body');
@@ -173,13 +182,19 @@ function create_name_input() {
   menu.append(create_box);
 }
 
+function create_user_list() {
+  const user_list = document.createElement('div');
+  user_list.setAttribute('id', 'user_list');
+  menu.append(user_list);
+}
+
 // Class selection
 function class_select() {
   create_box.style.justifyContent = 'start';
   create_box.classList.add('stretchMore');
   create_box.style.width = '50vw';
   create_box.style.height = '65vh';
-  user.username = username.value;
+  // user.username = username.value;
   username.remove();
   username_btn.remove();
   title.remove();
@@ -187,7 +202,7 @@ function class_select() {
   // Add new scene
   box_background.classList.add('box_background');
   create_box.append(box_background);
-  greetings_text.innerHTML = 'Hallo ' + user.username;
+  // greetings_text.innerHTML = 'Hallo ' + user.username;
   greetings_text.classList.add('greetings_text');
   box_background.append(greetings_text);
 
@@ -796,6 +811,7 @@ function set_up_creator() {
 
 create_menu();
 create_name_input();
+create_user_list();
 
 // End Buttons
 
@@ -821,12 +837,22 @@ function end_buttons() {
   create_button.innerHTML = 'create';
 
   create_button.addEventListener('click', () => {
+    const user = new create_user(
+      id,
+      'Mac',
+      rpg_classes[0],
+      hair_img.src,
+      eye_img.src,
+      mouth_img.src,
+      skin_img.src,
+      outfit_img.src
+    );
+
     location.reload();
   });
 }
 end_buttons();
 // Controller
-console.log(user.rpg_class);
 function enter_class_select() {
   username_btn.addEventListener('click', () => {
     class_select();
