@@ -142,7 +142,7 @@ const priest_style = [
 //const user = new create_user(id, 'Mac', rpg_classes[0]);
 
 // User lists
-let user_list = [[]];
+let user_arr = [];
 
 // View
 const body = document.querySelector('body');
@@ -182,11 +182,21 @@ function create_name_input() {
   menu.append(create_box);
 }
 
+//show user in list
 function create_user_list() {
   const user_list = document.createElement('div');
   user_list.setAttribute('id', 'user_list');
   menu.append(user_list);
 }
+user_list.forEach((e) => {
+  const user_profile = document.createElement('div');
+  const user_profile_picture = document.createElement('div');
+  const user_profile_name = document.createElement('p');
+  user_profile.setAttribute('id', 'user_profile');
+  user_list.append(user_profile);
+  user_profile.append(user_profile_picture);
+  user_profile.append(user_profile_name);
+});
 
 // Class selection
 function class_select() {
@@ -837,7 +847,7 @@ function end_buttons() {
   create_button.innerHTML = 'create';
 
   create_button.addEventListener('click', () => {
-    const user = new create_user(
+    user_list[id] = new create_user(
       id,
       'Mac',
       rpg_classes[0],
