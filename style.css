@@ -10,13 +10,14 @@ body{
 overflow: hidden;
 }
 #menu{
-    display: grid;
+    display: flex;
     
-    grid-template-columns: 1fr 1fr;
+    
     column-gap: 10vw;
 
 }
 #create_box{
+  align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,9 +121,46 @@ border: 0.5vh solid aqua;
   }
 
   #user_list{
-    height: 70vh;
+    height: 90vh;
     width: 30vw;
     border: solid 0.5vh rgb(132, 0, 255);
+    animation: stretchOut 1s;
+display: flex;
+flex-direction: column;
+  }
+
+  #user_profile{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 10vh;
+    width: 30vw;
+    animation: stretchOut 1s;
+
+    background-color: rgb(64, 64, 64);
+    
+   padding-left: 2vw;
+   box-sizing: border-box;
+  }
+
+  #user_profile:hover{
+background-color: aqua;
+cursor: pointer;
+  }
+
+  #user_profile img{
+    height: 10vh;
+    width: 10vh;
+    position: absolute;
+
+    
+  }
+
+  #user_profile p{
+    grid-column: 2;
+    align-self: center;
+    font-size: 20px;
+    font-weight: bold;
+    
   }
 
   .box_background{

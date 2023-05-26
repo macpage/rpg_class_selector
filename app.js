@@ -12,18 +12,18 @@ rpg_classes[0] = new rpg_class('Mage', 750, 1250, 1000);
 rpg_classes[1] = new rpg_class('Warrior', 1000, 1000, 1000);
 rpg_classes[2] = new rpg_class('Priest', 1250, 500, 1250);
 
-function create_user(id, username, rpg_class, hair, eyes, mouth, skin, outfit) {
+let id = 0;
+
+function create_user(id, username, rpg_class, skin, outfit, hair, eyes, mouth) {
   this.username = username;
   this.rpg_class = rpg_class;
-  this.id = id++;
+  this.id = id;
+  this.skin = skin;
+  this.outfit = outfit;
   this.hair = hair;
   this.eyes = eyes;
   this.mouth = mouth;
-  this.skin = skin;
-  this.outfit = outfit;
 }
-
-let id = 0;
 
 let selected_class = 0;
 
@@ -183,20 +183,45 @@ function create_name_input() {
 }
 
 //show user in list
+
 function create_user_list() {
   const user_list = document.createElement('div');
   user_list.setAttribute('id', 'user_list');
   menu.append(user_list);
+  // localStorage.removeItem('list');
+  // Get saved data
+  const savedData = JSON.parse(localStorage.getItem('list'));
+  // if localstorage exist
+  if (Array.isArray(savedData)) {
+    user_arr = savedData;
+    console.log('data retrieved');
+    console.log(user_arr);
+    user_arr.forEach((e) => {
+      console.log(e);
+      const user_profile = document.createElement('div');
+      let user_profile_picture = document.createElement('div');
+      const user_profile_name = document.createElement('p');
+      user_profile.setAttribute('id', 'user_profile');
+      user_list.append(user_profile);
+      user_profile.append(user_profile_picture);
+      user_profile.append(user_profile_name);
+      user_profile_name.innerHTML = '#000' + e.id + ' ' + e.username;
+
+      // create the profile pic
+      const imgs = [];
+      for (let i = 0; i < 5; i++) {
+        const img = document.createElement('img');
+        imgs[i] = img;
+        user_profile_picture.append(imgs[i]);
+      }
+      // iterate through the obejct values and only get the img's
+      for (let i = 3; i < 8; i++) {
+        console.log(Object.values(e)[i]);
+        imgs[i - 3].src = Object.values(e)[i];
+      }
+    });
+  }
 }
-user_list.forEach((e) => {
-  const user_profile = document.createElement('div');
-  const user_profile_picture = document.createElement('div');
-  const user_profile_name = document.createElement('p');
-  user_profile.setAttribute('id', 'user_profile');
-  user_list.append(user_profile);
-  user_profile.append(user_profile_picture);
-  user_profile.append(user_profile_name);
-});
 
 // Class selection
 function class_select() {
@@ -208,6 +233,7 @@ function class_select() {
   username.remove();
   username_btn.remove();
   title.remove();
+  document.querySelector('#user_list').remove();
 
   // Add new scene
   box_background.classList.add('box_background');
@@ -297,12 +323,15 @@ function class_select() {
         case 'mage':
           outfit_style = mage_style;
           console.log('style selected');
+          selected_class = 0;
           break;
         case 'warrior':
           outfit_style = warrior_style;
+          selected_class = 1;
           break;
         case 'priest':
           outfit_style = priest_style;
+          selected_class = 2;
           break;
       }
       set_up_creator();
@@ -804,7 +833,7 @@ function set_up_creator() {
     const username_div = document.createElement('div');
     username_div.setAttribute('id', 'username');
     char_preview_section.append(username_div);
-    username_div.innerHTML = '#000' + id + ' -' + username.value;
+    username_div.innerHTML = '#000' + user_arr.length + ' -' + username.value;
   }
   setTimeout(() => {
     addUsername();
@@ -847,17 +876,18 @@ function end_buttons() {
   create_button.innerHTML = 'create';
 
   create_button.addEventListener('click', () => {
-    user_list[id] = new create_user(
-      id,
-      'Mac',
-      rpg_classes[0],
+    user_arr[user_arr.length] = new create_user(
+      user_arr.length,
+      username.value,
+      rpg_classes[selected_class],
+      skin_img.src,
+      outfit_img.src,
       hair_img.src,
       eye_img.src,
-      mouth_img.src,
-      skin_img.src,
-      outfit_img.src
+      mouth_img.src
     );
 
+    localStorage.setItem('list', JSON.stringify(user_arr));
     location.reload();
   });
 }
