@@ -225,10 +225,13 @@ function create_user_list() {
 
 // Class selection
 function class_select() {
-  create_box.style.justifyContent = 'start';
-  create_box.classList.add('stretchMore');
-  create_box.style.width = '50vw';
-  create_box.style.height = '65vh';
+  create_box.remove();
+  const class_box = document.createElement('div');
+  class_box.setAttribute('id', 'class_box');
+  menu.append(class_box);
+  class_box.style.justifyContent = 'start';
+  class_box.classList.add('stretchMore');
+
   // user.username = username.value;
   username.remove();
   username_btn.remove();
@@ -237,8 +240,8 @@ function class_select() {
 
   // Add new scene
   box_background.classList.add('box_background');
-  create_box.append(box_background);
-  // greetings_text.innerHTML = 'Hallo ' + user.username;
+  class_box.append(box_background);
+  greetings_text.innerHTML = 'Hallo ' + username.value;
   greetings_text.classList.add('greetings_text');
   box_background.append(greetings_text);
 
@@ -373,12 +376,16 @@ char_creator.append(char_preview_section);
 
 function set_up_creator() {
   box_background.remove();
-  create_box.append(char_creator);
+  class_box.remove();
+  const char_box = document.createElement('div');
+  char_box.setAttribute('id', 'char_box');
+  char_box.append(char_creator);
   char_creator.append(selectors);
   char_preview_section.append(char_preview);
-  create_box.classList.add('stretchMore2');
-  create_box.style.width = '60vw';
-  create_box.style.height = '75vh';
+  char_box.classList.add('stretchMore2');
+  menu.append(char_box);
+  // create_box.style.width = '60vw';
+  //create_box.style.height = '75vh';
 
   // Selectors
 
