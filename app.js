@@ -262,7 +262,7 @@ function class_select() {
   document.querySelectorAll('.class_section').forEach((e, index) => {
     const class_pic = document.createElement('img');
     if (index == 0) {
-      class_pic.src = '/Users/mac/repos/rpg_class_selector/pics/mage.png';
+      class_pic.src = 'pics/mage.png';
     } else if (index == 1) {
       class_pic.src = 'pics/warrior.png';
     } else if (index == 2) {
