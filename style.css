@@ -845,6 +845,7 @@ padding: 3vh;
     grid-template-rows: 1fr 1fr 1fr;
    box-sizing: border-box;
    column-gap: 0;
+   padding: 2vh;
   }
 
   #char_creator p{
@@ -1029,6 +1030,7 @@ padding: 3vh;
    gap: 5vw;
    align-items: center;
    justify-content: center;
+   align-items: center;
   }
 
   #quit_button{
