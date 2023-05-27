@@ -452,7 +452,7 @@ padding: 3vh;
       background-color: transparent;
       grid-column: 1;
       grid-row: 1;
-      align-self: center;
+      
      
       box-sizing: border-box;
   
@@ -861,7 +861,7 @@ padding: 3vh;
     align-items: center;
     align-self: center;
     justify-self: center;
-    height: 40vh;
+    height: 50vh;
    
    border: solid 0.5vh rgb(132, 0, 255);
   
@@ -1030,7 +1030,7 @@ padding: 3vh;
 
   #quit_button{
     width: 20vw;
-    height: 8vh;
+    height: 5vh;
     border: 0.3vh solid rgb(109, 109, 109);
     background-color: transparent;
 
@@ -1056,7 +1056,7 @@ padding: 3vh;
 
   #create_button{
     width: 20vw;
-    height: 8vh;
+    height: 5vh;
     border: 0.3vh solid rgb(109, 109, 109);
     background-color: transparent;
 
