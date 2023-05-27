@@ -865,9 +865,10 @@ padding: 3vh;
    
    border: solid 0.5vh rgb(132, 0, 255);
   
-   box-sizing: border-box;
+  
    animation: stretchOut 2s;
-   padding: 0;
+
+
   }
   .selector{
     display: none;
@@ -879,6 +880,8 @@ padding: 3vh;
   justify-items: center;
     border: solid 0.5vh transparent;
     animation: fadeIn 2s;
+    height: 100%;
+
   
   }
 
